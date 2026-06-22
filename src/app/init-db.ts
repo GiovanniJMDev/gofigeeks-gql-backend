@@ -2,6 +2,7 @@ import { users as usersTable } from '#/auth/auth.schema'
 import { auth } from '#/shared/auth'
 import { drizzleClient } from '#/shared/drizzle-client'
 
+// Enable on db connection set up
 // initDatabaseUsers()
 
 async function initDatabaseUsers() {

@@ -1,3 +1,5 @@
+# src/contexts/auth/auth.schema.ts
+
 enum Role {
 	ADMIN
 	USER

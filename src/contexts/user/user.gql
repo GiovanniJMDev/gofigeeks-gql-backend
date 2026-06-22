@@ -1,3 +1,5 @@
+# src/contexts/auth/auth.schema.ts
+
 type User {
 	id: String!
 	email: String!
