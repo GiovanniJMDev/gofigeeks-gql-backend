@@ -49,6 +49,9 @@ npm run db:generate
 
 # Ejecutar migraciones
 npm run db:migrate
+
+# Inicializar datos (la primera vez, y en el punto 14, pero puedes ir haciendolo desde el principio)
+npm run db:seed
 ```
 
 ### 4. Iniciar servidor en desarrollo
@@ -109,11 +112,9 @@ src/
 │
 └── contexts/                      # Lógica de dominio por contexto
     ├── auth/                      # Autenticación y autorización
-    ├── tweet/                     # Sistema de tweets
-    ├── user/                      # Perfiles de usuario
-    ├── storage/                   # Gestión de archivos
-    ├── session/                   # Sesiones de usuario
-    └── shared/                    # Utilidades compartidas (DDD base classes)
+    ├── role/                      # Roles disponibles
+    ├── shared/                    # Utilidades compartidas (DDD base classes)
+    └── user/                      # Perfiles de usuario
 ```
 
 

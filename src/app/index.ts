@@ -5,7 +5,6 @@ import { createYoga } from 'graphql-yoga'
 import { createServer } from 'node:http'
 import { schema } from './graphql/schema'
 import { DataLoaders } from './graphql/shared/data-loaders'
-import './init-db'
 
 const yoga = createYoga({
 	schema,

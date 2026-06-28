@@ -121,6 +121,10 @@ Parece que has creado un clon fantástico. Pero me acaba de llamar Elon, dice qu
 
 Crea una subscription `tweets: Tweet!` sin argumentos que emita un evento cada vez que se publique un tweet nuevo. Así el frontend podrá mostrar los tweets nuevos al instante sin necesidad de refrescar la página.
 
+Cuidado! Las subscription necesitaran un ajuste en tu implementacion de la directiva @auth.
+
+> **Nota:** Para probar las subscripciones necesitas usar GraphiQL (el playground por defecto de Yoga) en lugar de Apollo Sandbox, ya que Apollo no soporta subscripciones por SSE actualmente. Para activar GraphiQL, comenta las líneas 22-26 de `index.ts` (la configuración de `renderGraphiQL` con Apollo Sandbox).
+
 ## Paso 14: Generar Datos por Defecto con Drizzle Seed
 
 Insertar datos manualmente en la base de datos es tedioso y poco escalable. Utiliza el paquete `drizzle-seed` para generar datos de prueba de forma determinista y reproducible.

@@ -7,5 +7,5 @@ type User {
 	emailVerified: Boolean!
 	image: String
 	biography: String
-	createdAt: String!
+	createdAt: DateTimeISO!
 }

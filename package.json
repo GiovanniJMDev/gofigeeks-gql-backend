@@ -11,6 +11,7 @@
     "start": "node dist/index.js",
     "db:generate": "run-s auth:generate drizzle:generate",
     "db:migrate": "run-s drizzle:migrate",
+    "db:seed": "tsx scripts/seed-db.ts",
     "auth:generate": "run-s better-auth:**",
     "better-auth:generate": "npx auth generate --yes --config src/contexts/shared/auth.ts --output src/contexts/auth/auth.schema.ts",
     "better-auth:format": "npx prettier --write src/contexts/auth/auth.schema.ts",

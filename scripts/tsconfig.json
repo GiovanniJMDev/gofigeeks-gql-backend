@@ -1,20 +1,15 @@
 {
 	"compilerOptions": {
-		"outDir": "dist",
-		"rootDir": "src",
 		"types": [
 			"node"
 		],
 		"paths": {
 			"@/*": [
-				"./src/app/*"
+				"../src/app/*"
 			],
 			"#/*": [
-				"./src/contexts/*"
+				"../src/contexts/*"
 			]
 		}
 	},
-	"include": [
-		"src"
-	]
 }
