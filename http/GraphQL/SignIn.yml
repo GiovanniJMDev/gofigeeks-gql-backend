@@ -1,0 +1,31 @@
+info:
+  name: SignIn
+  type: graphql
+  seq: 5
+
+graphql:
+  method: POST
+  url: "{{host}}"
+  body:
+    query: |
+      mutation SignIn($email: String!, $password: String!) {
+        SignIn(email: $email, password: $password) {
+          user {
+            id
+            name
+            email
+          }
+        }
+      }
+    variables: |
+      {
+        "email": "admin@example.com",
+        "password": "admin"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

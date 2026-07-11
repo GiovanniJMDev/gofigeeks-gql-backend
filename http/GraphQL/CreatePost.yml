@@ -1,0 +1,37 @@
+info:
+  name: CreatePost
+  type: graphql
+  seq: 4
+
+graphql:
+  method: POST
+  url: "{{host}}"
+  body:
+    query: |
+      mutation CreatePost($input: CreatePostInput!) {
+        CreatePost(input: $input) {
+          id
+          title
+          description
+          contentUrl
+          likes
+          authorId
+          createdAt
+        }
+      }
+    variables: |
+      {
+        "input": {
+          "title": "Mi primer post",
+          "description": "Contenido de prueba",
+          "contentUrl": "https://placekitten.com/400/400",
+          "authorId": "REEMPLAZA_CON_UN_ID_DE_USER_REAL"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

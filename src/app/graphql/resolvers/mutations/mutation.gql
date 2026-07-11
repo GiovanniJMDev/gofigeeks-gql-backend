@@ -1,3 +1,6 @@
 type Mutation {
 	CreateUser(input: CreateUserInput!): User!
+	CreatePost(input: CreatePostInput!): Post!
+	SignIn(email: String!, password: String!): AuthPayload!
+	SignOut: Boolean!
 }

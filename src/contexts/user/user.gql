@@ -10,9 +10,13 @@ type User {
 	createdAt: DateTimeISO!
 }
 
+scalar Upload
+
 input CreateUserInput {
 	name: String!
 	email: String!
-	image: String
+	password: String!
+	image: Upload
+	imageUrl: String
 	biography: String
 }

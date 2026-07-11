@@ -1,0 +1,19 @@
+# src/contexts/post/post.schema.ts
+
+type Post {
+	id: String!
+	title: String!
+	description: String!
+	contentUrl: String!
+	likes: Int!
+	authorId: String!
+	createdAt: DateTimeISO!
+	updatedAt: DateTimeISO!
+}
+
+input CreatePostInput {
+	title: String!
+	description: String!
+	contentUrl: String!
+	authorId: String!
+}

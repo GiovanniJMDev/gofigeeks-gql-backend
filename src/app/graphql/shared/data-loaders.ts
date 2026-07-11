@@ -43,7 +43,7 @@ export class DataLoaders {
 			loaderInstances[typeName] = {}
 
 			for (const [fieldName, loaderFn] of Object.entries(typeLoaders)) {
-				loaderInstances[typeName][fieldName] = new DataLoader(loaderFn)
+				loaderInstances[typeName][fieldName] = new DataLoader(loaderFn as any)
 			}
 		}
 
