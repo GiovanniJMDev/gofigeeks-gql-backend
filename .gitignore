@@ -6,6 +6,8 @@ dist/
 
 # Environment variables
 *.local
+.env
+.env.*
 
 # Drizzle
 drizzle/meta/
@@ -26,5 +28,3 @@ Thumbs.db
 *.tsbuildinfo
 .agents
 .claude
-.env
-.env.*
