@@ -24,3 +24,7 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+.agents
+.claude
+.env
+.env.*

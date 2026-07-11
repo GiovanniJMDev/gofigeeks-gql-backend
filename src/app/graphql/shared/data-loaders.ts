@@ -1,5 +1,7 @@
 import DataLoader from 'dataloader'
-import { loaders } from '../loaders'
+import { loaders, type LoaderKey } from '../loaders'
+
+type ContextLoaders = Record<string, Record<string, DataLoader<LoaderKey, any>>>
 
 export class DataLoaders {
 	/**
@@ -19,12 +21,10 @@ export class DataLoaders {
 				result[typeName][fieldName] = async (
 					parent: any,
 					args: any,
-					context: any,
+					context: { loaders: ContextLoaders },
 				) => {
-					return await context.loaders[typeName][fieldName].load({
-						obj: parent,
-						params: args,
-					})
+					const key: LoaderKey = { obj: parent, params: args }
+					return await context.loaders[typeName][fieldName].load(key)
 				}
 			}
 		}
@@ -36,14 +36,14 @@ export class DataLoaders {
 	 * Creates a context object with DataLoader instances for all defined loaders.
 	 * Automatically instantiates DataLoader for each loader function.
 	 */
-	static createContext() {
-		const loaderInstances: Record<string, any> = {}
+	static createContext(): { loaders: ContextLoaders } {
+		const loaderInstances: ContextLoaders = {}
 
 		for (const [typeName, typeLoaders] of Object.entries(loaders)) {
 			loaderInstances[typeName] = {}
 
 			for (const [fieldName, loaderFn] of Object.entries(typeLoaders)) {
-				loaderInstances[typeName][fieldName] = new DataLoader(loaderFn as any)
+				loaderInstances[typeName][fieldName] = new DataLoader(loaderFn)
 			}
 		}
 

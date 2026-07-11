@@ -1,0 +1,25 @@
+info:
+  name: Hello
+  type: graphql
+  seq: 1
+
+graphql:
+  method: POST
+  url: "{{host}}"
+  body:
+    query: |
+      query Hello {
+        hello,
+        users {
+          id
+          name
+          email
+          biography
+        }}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

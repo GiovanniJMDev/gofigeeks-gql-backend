@@ -9,3 +9,10 @@ type User {
 	biography: String
 	createdAt: DateTimeISO!
 }
+
+input CreateUserInput {
+	name: String!
+	email: String!
+	image: String
+	biography: String
+}

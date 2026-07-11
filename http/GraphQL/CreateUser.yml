@@ -1,0 +1,33 @@
+info:
+  name: CreateUser
+  type: graphql
+  seq: 2
+
+graphql:
+  method: POST
+  url: "{{host}}"
+  body:
+    query: |
+      mutation CreateUser($input: CreateUserInput!) {
+        CreateUser(input: $input) {
+          id
+          name
+          email
+          image
+          biography
+        }
+      }
+    variables: |
+      {
+        "input": {
+          "name": "Nuevo Usuario",
+          "email": "nuevo@example.com"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
